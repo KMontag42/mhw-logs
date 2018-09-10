@@ -2,6 +2,9 @@
 <html>
   <head>
     <title>MHW Logs</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -11,13 +14,18 @@
     <%= yield :extra_head %>
   </head>
 
-  <body class="HolyGrail">
-    <header><%= yield :header %> This is a cool header</header>
-    <div class="HolyGrail-body">
-      <main class="HolyGrail-content"><%= yield %></main>
-      <nav class="HolyGrail-nav"><%= yield :nav %></nav>
-      <aside class="HolyGrail-ads"><%= yield :aside %></aside>
-    </div>
-    <footer><%= yield :footer %> This is a cool footer</footer>
+  <body class="<%= controller_name %> <%= action_name %>">
+    <%= render partial: 'shared/navbar' %>
+    <%= yield :header %>
+    <section class="section is-large">
+      <%= yield %>
+    </section>
+    <footer class="footer">
+      <div class="content has-text-centered">
+        <p>
+          <strong>MHW Logs</strong> made with &hearts; by <a href="https://github.com/kmontag42">Kyle Montag</a>.
+        </p>
+      </div>
+    </footer>
   </body>
 </html>

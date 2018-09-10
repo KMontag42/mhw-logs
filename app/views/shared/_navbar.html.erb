@@ -1,0 +1,18 @@
+<nav class="navbar is-dark is-bold">
+  <div class="container">
+    <div class="navbar-brand">
+      <%= link_to icon('fas', 'home'), root_path, class: 'navbar-item' %>
+      <span role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarMenuHeroA">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </span>
+    </div>
+    <div id="navbarMenuHeroA" class="navbar-menu">
+      <div class="navbar-end">
+        <%= active_link_to 'Home', root_path, class: 'navbar-item' %>
+        <%= active_link_to 'About', about_path, class: 'navbar-item' %>
+      </div>
+    </div>
+  </div>
+</nav>
